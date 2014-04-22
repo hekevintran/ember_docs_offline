@@ -1,7 +1,7 @@
 # Based on https://gist.github.com/yannis/7806288
 require "yaml"
 
-ROOT_PATH = File.expand_path("~/Desktop/ember_docs_offline/") + '/'
+ROOT_PATH = File.dirname(File.expand_path(__FILE__))+'/'
 TABLE_OF_CONTENT_PATH = ROOT_PATH+"website/data/guides.yml"
 GUIDE_FILES_PATH = ROOT_PATH+"website/source/guides/"
 
@@ -51,11 +51,11 @@ def concatenate_files
   end
   return strings.join("\n")
 end
-
-# system "mkdir #{ROOT_PATH}"
-system "cd #{ROOT_PATH}"
-# system "git clone https://github.com/emberjs/website.git #{ROOT_PATH}website"
-File.write "#{ROOT_PATH}ember_guides_combined.md", concatenate_files
-remove_js_bin
-# system "gimli -file #{ROOT_PATH}ember_guides_combined.md > #{ROOT_PATH}ember_guides_combined.pdf"
-p "done"
+# 
+# # system "mkdir #{ROOT_PATH}"
+# system "cd #{ROOT_PATH}"
+# # system "git clone https://github.com/emberjs/website.git #{ROOT_PATH}website"
+# File.write "#{ROOT_PATH}ember_guides_combined.md", concatenate_files
+# remove_js_bin
+# # system "gimli -file #{ROOT_PATH}ember_guides_combined.md > #{ROOT_PATH}ember_guides_combined.pdf"
+# p "done"
